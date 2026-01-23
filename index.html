@@ -4,16 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dharineesh V | Web Developer</title>
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- Header -->
   <header class="header">
     <div class="container nav">
       <h1 class="logo">Dharineesh .V<span></span></h1>
+
+      <!-- Hamburger -->
+      <div class="menu-btn" id="menuBtn">☰</div>
+
       <nav>
+        <button id="themeToggle" class="btn secondary">🌙</button>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -51,18 +58,11 @@
     <div class="container">
       <h3 class="section-title">Skills</h3>
       <div class="skills-grid">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Firebase</span>
-        <span>Computer Networks</span>
-        <span>Web Technologies</span>
-        <span>Java</span>
-        <span>Python</span>
-        <span>DBMS</span>
-        <span>C</span>
-        <span>Node.js</span>
-        <span>Data Structures</span>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        <span>Firebase</span><span>Computer Networks</span>
+        <span>Web Technologies</span><span>Java</span>
+        <span>Python</span><span>Mysql</span>
+        <span>C</span><span>Node.js</span><span>Data Structures</span>
       </div>
     </div>
   </section>
@@ -73,42 +73,25 @@
 
     <div class="project-card">
       <h4>Venue / Library Booking System</h4>
-      <p>
-        A role-based web application with OAuth authentication and separate
-        Admin, Teacher, and Student dashboards. Enforces a rule allowing
-        only one booking per student per day to ensure fair usage.
-      </p>
+      <p>A role-based web application with OAuth authentication and separate dashboards.</p>
       <div class="project-links">
-        <a href="https://library-booking-application.vercel.app/" target="_blank">
-          Live Demo →
-        </a>
+        <a href="https://library-booking-application.vercel.app/" target="_blank">View Project →</a>
       </div>
     </div>
 
     <div class="project-card">
       <h4>OTP Attendance & Movement Pass System</h4>
-      <p>
-        A secure web application combining OTP-based attendance tracking
-        with a movement pass system to prevent proxy attendance and
-        unauthorized movement.
-      </p>
+      <p>Secure OTP-based attendance to prevent proxy attendance.</p>
       <div class="project-links">
-        <a href="https://attedance-web-application.vercel.app/" target="_blank">
-          View Project →
-        </a>
+        <a href="https://attedance-web-application.vercel.app/" target="_blank">View Project →</a>
       </div>
     </div>
 
     <div class="project-card">
       <h4>To-Do List Application</h4>
-      <p>
-        A responsive to-do list app that allows users to add, edit, delete,
-        and manage daily tasks efficiently using clean UI and local storage.
-      </p>
+      <p>Responsive to-do app using clean UI and local storage.</p>
       <div class="project-links">
-        <a href="https://todolist-orpin-seven.vercel.app/" target="_blank">
-          View Project →
-        </a>
+        <a href="https://todolist-orpin-seven.vercel.app/" target="_blank">View Project →</a>
       </div>
     </div>
   </section>
@@ -117,20 +100,10 @@
   <section id="contact" class="section bg-light">
     <div class="container">
       <h3 class="section-title">Contact</h3>
-      
 
       <div class="contact-details">
-        <p><strong>Email:</strong>
-          <a href="mailto:dharineeshv18@gmail.com">
-            dharineeshv18@gmail.com
-          </a>
-        </p>
-
-        <p><strong>Mobile:</strong>
-          <a href="tel:+919715020320">
-            +91 97150 20320
-          </a>
-        </p>
+        <p><strong>Email:</strong> <a href="mailto:dharineeshv18@gmail.com">dharineeshv18@gmail.com</a></p>
+        <p><strong>Mobile:</strong> <a href="tel:+919715020320">+91 97150 20320</a></p>
       </div>
 
       <div class="social-links">
@@ -145,6 +118,27 @@
   <footer class="footer">
     <p>© 2026 Dharineesh V</p>
   </footer>
+
+  <script>
+    // Dark Mode
+    document.getElementById("themeToggle")
+      .onclick = () => document.body.classList.toggle("dark");
+
+    // Mobile Menu
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.querySelector("nav");
+    menuBtn.onclick = () => nav.classList.toggle("active");
+
+    // Scroll Reveal
+    const reveals = document.querySelectorAll(".section, .project-card");
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add("reveal", "active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
